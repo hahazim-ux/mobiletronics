@@ -79,3 +79,24 @@ Route::get('/product/{id}', [ProductController::class, 'show']);
 });
 
 
+   Route::group(['prefix' => 'products', 'as' => 'products.'], function() {
+    Route::get('/', [ProductController::class, 'index'])->name('index');
+    Route::get('/create', [ProductController::class, 'create'])->name('create');
+    Route::post('/store', [ProductController::class, 'store'])->name('store');
+    Route::get('/{product}/show', [ProductController::class, 'show'])->name('show');
+    Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('edit');
+    Route::put('/{product}/update', [ProductController::class, 'update'])->name('update');
+    Route::delete('/{product}/destroy', [ProductController::class, 'destroy'])->name('destroy');
+});
+
+
+
+Route::group(['prefix' => 'services', 'as' => 'services.'], function () {
+    Route::get('/', [ServiceController::class, 'index'])->name('index');
+    Route::get('/create', [ServiceController::class, 'create'])->name('create');
+    Route::post('/store', [ServiceController::class, 'store'])->name('store');
+    Route::get('/{service}/show', [ServiceController::class, 'show'])->name('show');
+    Route::get('/{service}/edit', [ServiceController::class, 'edit'])->name('edit');
+    Route::put('/{service}/update', [ServiceController::class, 'update'])->name('update');
+    Route::delete('/{service}/destroy', [ServiceController::class, 'destroy'])->name('destroy');
+});
