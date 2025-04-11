@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?? 'Tinta Persona' ?></title>
+    <title><?= $title ?? 'Mobiletronics' ?></title>
 
     <!-- Bootstrap 5 CSS (use only one version) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,8 +12,8 @@
     <!-- Lightbox2 CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="<?= base_url('css/style_tinta.css') ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 
     <!-- External fonts -->
     <style>
@@ -22,18 +22,31 @@
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+        
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg,rgb(241, 242, 247) 0%,rgb(244, 3, 3) 100%);
+    }
+
     </style>
 </head>
 <body>
 
     <!-- Include Header -->
-    <?= $this->include('tinta/partials/header'); ?>
+    <?= $this->include('partials/header'); ?>
 
     <!-- Main Content -->
     <?= $this->renderSection('content'); ?>
 
     <!-- Include Footer -->
-    <?= $this->include('tinta/partials/footer'); ?>
+    <?= $this->include('partials/footer'); ?>
 
     <!-- jQuery (Required for Lightbox2) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
